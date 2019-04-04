@@ -4,6 +4,7 @@ import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider
 import org.apache.commons.validator.routines.UrlValidator
 import org.jets3t.service.S3ServiceException
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
+import software.amazon.awssdk.auth.credentials.InstanceProfileCredentialsProvider
 import software.amazon.awssdk.core.sync.ResponseTransformer
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.model.GetObjectRequest
@@ -46,7 +47,7 @@ class FileUtil(accessKeyId: String = "", secretAccessKey: String = "") {
             val key = split.subList(1, split.size).joinToString("/")
 
             val s3 = S3Client.builder()
-                .credentialsProvider(StaticCredentialsProvider.create(credentials))
+                .credentialsProvider(InstanceProfileCredentialsProvider.builder().build())
                 .region(Region.of(region))
                 .build()
 
