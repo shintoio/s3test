@@ -3,9 +3,9 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.prompt
 import java.net.URL
 
-class App : CliktCommand(){
+class App : CliktCommand() {
 
-    val file: String by option(help="The url of the file to download").prompt("enter a file top download")
+    val file: String by option(help = "The url of the file to download").prompt("enter a file top download")
 
     override fun run() {
         val util = FileUtil()
