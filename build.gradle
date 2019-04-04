@@ -21,6 +21,11 @@ dependencies {
 
 }
 
+jar {
+    manifest { attributes 'Main-Class': 'AppKt' }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
