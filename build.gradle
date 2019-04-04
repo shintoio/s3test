@@ -2,7 +2,6 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
 }
 
-mainClassName = 'AppKt'
 
 group 'io.shinto'
 version '1.0-SNAPSHOT'
@@ -10,6 +9,11 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'AppKt'
 
 dependencies {
 
