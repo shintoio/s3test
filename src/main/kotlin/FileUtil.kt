@@ -19,7 +19,7 @@ class FileUtil(accessKeyId: String = "", secretAccessKey: String = "") {
     private val schemes = arrayOf("http", "https", "s3", "s3a")
     private val urlValidator = UrlValidator(schemes)
 
-    private val credentials = AwsBasicCredentials.create(accessKeyId, secretAccessKey)
+   // private val credentials = AwsBasicCredentials.create(accessKeyId, secretAccessKey)
 
     fun downloadFile(remote: String, destination: String): Boolean {
 
